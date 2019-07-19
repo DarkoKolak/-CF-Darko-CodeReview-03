@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CodeReview3</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		
+		<div id="headerImg">
+			<img id="logo" src="img/logo.png" alt="logo">
+			<img id="banner" src="img/banner.png" alt="bann">
+		</div>
+		<div id="navigation">
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Team</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<main>
+		
+		<div id="background">
+			<div id="car"><h1>Car Insurance</h1></div>
+			<div id="themain">
+				<div id="text">
+					<h1>Great Coverage begins <br>
+					with a custom quote</h1>
+				</div>
+				<div id="form">
+					<div class="field">
+					<p>Your Name</p>
+					<input id="name" type="text" name="name">
+				</div>
+
+				<div class="field">
+					<p>Age</p>
+					<input id="age" type="text" name="age">
+				</div>
+
+				<div class="field">
+					<p>Country</p>
+					<select id="Country">
+						<option value="Austria"> Austria</option>
+						<option value="Hungary"> Hungary</option>
+						<option value="Greece"> Greece</option>
+					</select>
+				</div>
+
+				<div class="field">
+					<p>Horse Power of your car</p>
+					<input id="horse" type="text" name="power">
+				</div>
+				<div class="field" id="cal">
+					<input id="btn" type="submit" value="Calculate">
+					</div>
+				</div>
+
+
+				<div id="result">
+				</div>
+			</div>
+			<div id="textunder">
+			<p id="first">Un-complicating car coverage </p>
+			<p>Understandig your coverage options shouldn't be so hard</p>
+			<p>We'll guide you through available coverage types,</p>
+			<p>starting with who and what is covered</p>
+		</div>
+
+		</div>
+
+		<div id="both">
+			
+			<div class="first">
+				<div class="big">What comes standard</div>
+				<p class="under">The coverage you need</p>
+				<div class="list">
+				<p> &#10003; Bodily Injury Liability</p>
+				<p>&#10003; Property Damage</p>
+				<p>&#10003; Medical Payments</p>
+				</div>
+				<div class="down">
+				<p><b>Benefits</b></p>
+				<p class="last">12-month rate guarantee | 24/7 customer<br>
+				service | Lifetime Repair Guarantee</p>
+				</div>
+			</div>
+			<div class="second">
+				<div class="big">Add-on protection & coverage</div>
+				<p class="under">For more peace of mind</p>
+				<div class="list">
+				<p>&#10003; Better car Replacment</p>
+				<p>&#10003; Towing & Labor</p>
+				<p>&#10003; Rental Car Coverage</p>
+				</div>
+				<div class="down">
+				<p><b>Earned Benefits</b></p>
+				<p class="last">Accident Forgivness' | New Car <br>
+				Replacment</p>
+				</div>
+			</div>
+		</div>
+	</main>
+<footer>
+	
+	<ul>
+		<li><a href="">Home</a></li>
+		<li><a href="">Team</a></li>
+	</ul>
+	<div>
+		<img src="img/logo-inv.png">
+	</div>
+	<p>Darko-CodeFactory 2019</p>
+
+
+</footer>
+
+
+
+
+
+
+
+<script>
+	function calculateinsurance(){
+		var a = document.getElementById("name").value;
+		var b = Number(document.getElementById("age").value);
+		var c = document.getElementById("Country").value;
+		var d = Number(document.getElementById("horse").value);
+		var result =0;
+		if (c == "Austria") {
+			result= (d*100)/(b+50);
+		}
+		else if(c=="Hungary"){
+			result=(d*120)/(b+100);
+		}
+		else if (c=="Greece") {
+			result=(d*150)/(b+53);
+		}
+		else{
+			document.getElementById("result").innerHTML = "Something went Wrong";
+		}
+		document.getElementById("result").innerHTML = ""+ a + " your insurance costs " + result + " $";
+
+	}
+	var button = document.getElementById("btn");
+	button.addEventListener("click",calculateinsurance,false);
+
+</script>
+
+</body>
+</html>
